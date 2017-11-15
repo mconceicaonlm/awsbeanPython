@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<title>MCM </title>
+<meta charset="utf-8">
+{% load staticfiles %} 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <nav>
+    <ul class="nav nav-pills">
+        <li role="presentation" class="active"><a href='/'>Home</a></li>
+    </ul>
+    </nav>
+    <!-- os styles vai buscar a css -->
+    <nav>
+            <!-- <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">MCM</a></p> -->
+        <img src="{% static 'img/guarda.jpg' %}" class = "img-responsive">
+    </nav>
+        
+</head>
+<body>
+    <br/><br/><br/><br/><br/><br/><br/>
+</body>
+
+<footer class="container-fluid">
+    <div class = 'col-sm-12'>
+        <div class="container-fluid" style="margin-right:0%">
+        <a href="https://www.facebook.com/facebook" target="_blank">
+        <img src="{% static 'img/logos/if_facebook_128_221698.png' %}"></a>
+
+        <a href="https://www.linkedin.com/"target="_blank">
+        <img src="{% static 'img/logos/if_linkedin_128_221700.png' %}" style='max-height:100px' alt="face"></a>            
+
+        <a href="https://www.pinterest.pt/"target="_blank">
+        <img src="{% static 'img/logos/if_pinterest_128_221705.png' %}" style='max-height:100px' alt="face"></a>
+
+        <a href="https://www.google.com/"target="_blank">
+        <img src="{% static 'img/logos/if_google_128_221701.png' %}" style='max-height:100px' alt="face"></a>
+        </div>
+    </div>
+  </footer>
+
+</html>

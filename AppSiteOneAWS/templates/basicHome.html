@@ -1,0 +1,8 @@
+{% extends "home.html" %}
+{% block content%}    
+<p> Welcome to my website home html pagina </p>
+    {% for c in content %}
+        <p> {{c}} </p>
+    {% endfor %}
+{%include "includes/htmlsnippet.html" %}
+{% endblock %}   
