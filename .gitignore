@@ -1,10 +1,10 @@
 ebDjangoProj/settings/local.py
 ebDjangoProj/settings/*.pyc
-ebDjangoProj/AppSiteOneAWS/static/
-ebDjangoProj/AppSiteOneAWS/*.pyc
+AppSiteOneAWS/static/
 ebDjangoProj/db.sqlite3
 ebDjangoProj/*.pyc
-ebDjangoProj\db.sqlite3
+AppSiteOneAWS/*.pyc
+AppSiteOneAWS/migrations/
 
 # Elastic Beanstalk Files
 
