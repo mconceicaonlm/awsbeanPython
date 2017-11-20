@@ -70,10 +70,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ebDjangoProj.wsgi.application'
 
-
-AWS_ACCESS_KEY_ID = 'AKIAIV66TCOCBWPXJ47Q'
-AWS_SECRET_ACCESS_KEY = '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'
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
@@ -123,3 +119,31 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
+
+AWS_ACCESS_KEY_ID = 'AKIAIV66TCOCBWPXJ47Q'
+AWS_SECRET_ACCESS_KEY = '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'
+
+AWS_FILE_EXPIRE = 200
+AWS_PRELOAD_METADATA = True
+AWS_QUERYSTRING_AUTH = True
+
+DEFAULT_FILE_STORAGE = 'ebDjangoProj.utils.MediaRootS3BotoStorage'
+STATICFILES_STORAGE = 'ebDjangoProj.utils.StaticRootS3BotoStorage'
+AWS_STORAGE_BUCKET_NAME = 'djandositetests'
+S3DIRECT_REGION ='eu-west-2'
+S3_URL = '//%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+MEDIA_URL = '//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME
+MEDIA_ROOT = MEDIA_URL
+STATIC_URL = S3_URL + 'static/'
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
+
+import datetime
+
+date_two_months_later = datetime.date.today() + datetime.timedelta (2*365/12)
+expires = date_two_months_later.strftime("%A, %d %B %Y 20:00:00 GMT")
+
+AWS_HEADERS= {
+    'Expires': expires,
+    'Cache-Control': 'max-age=86400',
+}
+
