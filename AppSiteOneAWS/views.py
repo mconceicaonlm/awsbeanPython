@@ -13,6 +13,7 @@ from django.http import HttpResponseRedirect
 
 from .forms import ContactForm
 from .models import Question
+from .models import Produtos
 
 def Inicio (request):
     return render (request, 'home.html')
@@ -69,3 +70,20 @@ def experimentar(request):
 
 def thanks(request):
     return HttpResponse('Thank you for your message.')
+
+
+#####
+# adicionado para gestão de produtos
+#####
+
+def details(request, prodnome):
+    response = ("details: qual é o nome do produto = %", prodnome )
+    return HttpResponse(response, prodnome)
+
+def results(request, prodnome):
+    response = "Results - Nome do produto %s.", prodnome
+    return HttpResponse(response % prodnome)
+
+# def vote (request, prodnome):
+#     return HttpResponse ("vote ", prodnome)
+

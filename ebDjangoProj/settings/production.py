@@ -15,6 +15,8 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = "/media/"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -73,14 +75,16 @@ WSGI_APPLICATION = 'ebDjangoProj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get ('DB_NAME', 'PostGres_testDB'),
+        'USER': os.environ.get ('DB_USER', 'postgres'),
+        'PASSWORD': os.environ.get ('DB_PASS', 'Cmpostgre2017'),
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
@@ -119,6 +123,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
+
 
 AWS_ACCESS_KEY_ID = 'AKIAIV66TCOCBWPXJ47Q'
 AWS_SECRET_ACCESS_KEY = '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'

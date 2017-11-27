@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <title>Lista de produtos</title>
+    <meta charset="UTF-8"/>
+    {% load staticfiles %} 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <nav>
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href='/'>Home</a></li>
+            <li role="presentation" class="active"><a href="/contact/">Contatos</a></li>
+            <div class="container-fluid" style="margin-left:80%">
+            <a href="https://www.facebook.com/facebook" target="_blank">
+            <img src="{% static 'img/logos/if_facebook_128_221698.png' %}"></a>
+            <a href="https://www.linkedin.com/"target="_blank">
+            <img src="{% static 'img/logos/if_linkedin_128_221700.png' %}" style='max-height:100px' alt="face"></a>            
+            <a href="https://www.pinterest.pt/"target="_blank">
+            <img src="{% static 'img/logos/if_pinterest_128_221705.png' %}" style='max-height:100px' alt="face"></a>
+            <a href="https://www.google.com/"target="_blank">
+            <img src="{% static 'img/logos/if_google_128_221701.png' %}" style='max-height:100px' alt="face"></a>  
+            </div>
+        </ul>
+    </nav>    
+</head>
+<body>
+    <div class="container-fluid">
+        <h2>Produtos </h2>
+        <!--<p>The .thumbnail class can be used to display an image gallery.</p>
+        <p>The .caption class adds proper padding and a dark grey color to text inside thumbnails.</p>-->
+        <p>Click on the images to enlarge them.</p>
+        <div class="row">
+            {% block content%}
+            {% for listprodutos in object_list %}
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <a href="{{listprodutos.id}}"></a>
+                        <h12>{{listprodutos.id}} {{listprodutos.prodnome}}</h12>
+                        <br/>
+                        <h12>{{listprodutos.descricao}}</h12>
+                        <img src="{{ listprodutos.imagem.url }}">
+                        {%if listprodutos.active %}
+                            {%if listprodutos.preco != 0%}
+                                <br/>
+                                <h12>{{listprodutos.preco}} ªº</h12>
+                            {%else%}   
+                                <h12>'Produto não disponivel'</h12>   
+                            {%endif%}
+                        {%else%}   
+                            <h12>'Produto não disponivel'</h12>
+                        {%endif%}
+                    </div>
+                </div>
+            {% endfor%}
+            {% endblock %}
+        </div>
+    </div>
+</body>
+<footer class="container-fluid">
+</footer>
+</html>
