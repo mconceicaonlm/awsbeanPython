@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <title>Lista de produtos</title>
+    <meta charset="UTF-8"/>
+    {% load staticfiles %} 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <nav>
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href='/'>Home</a></li>
+            <li role="presentation"><a href="https://www.linkedin.com/" target="_blank">Profile</a></li>
+        </ul>
+    </nav>      
+</head>
+<body>
+    <div class = "container-fluid" style="min-height:95%">
+        <div class = 'col-sm-4'>
+            <div class="container-fluid">
+                <br/> <b/>
+                {% if produtos %} -->
+                    <h5> Olá estou no meio</h5>
+                    {% for b in produtos %}
+                        {{ b.imagem }} <!--aqui exibi o local da imagem com seu nome....ta funcionando-->
+                        <img src="{{b.imagem}}">
+                        {{ b.prodnome }} <br />
+                    {% endfor %}
+                {% endif %}
+            </div>        
+        </div>
+        <div class = 'col-sm-8'>
+
+        </div>
+    </div>
+</body>
+<footer class="container-fluid">
+    <div class = 'col-sm-12'>
+        <div class="container-fluid" style="margin-right:0%">
+        <a href="https://www.facebook.com/facebook" target="_blank">
+        <img src="{% static 'img/logos/if_facebook_128_221698.png' %}"></a>
+        
+        <a href="https://www.linkedin.com/"target="_blank">
+        <img src="{% static 'img/logos/if_linkedin_128_221700.png' %}" style='max-height:100px' alt="face"></a>            
+        
+        <a href="https://www.pinterest.pt/"target="_blank">
+        <img src="{% static 'img/logos/if_pinterest_128_221705.png' %}" style='max-height:100px' alt="face"></a>
+
+        <a href="https://www.google.com/"target="_blank">
+        <img src="{% static 'img/logos/if_google_128_221701.png' %}" style='max-height:100px' alt="face"></a>  
+        </div>
+    </div>
+</footer>
+</html>
