@@ -1,6 +1,8 @@
 #ebDjangoProj/settings/local.py
 ebDjangoProj/__pycache__
 ebDjangoProj/settings/__pycache__
+ebDjangoProj/db.sqlite3
+
 # Elastic Beanstalk Files
 
 .elasticbeanstalk/*
