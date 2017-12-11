@@ -1,0 +1,11 @@
+#ebDjangoProj/settings/local.py
+ebDjangoProj/__pycache__
+ebDjangoProj/settings/__pycache__
+# Elastic Beanstalk Files
+
+.elasticbeanstalk/*
+
+!.elasticbeanstalk/*.cfg.yml
+
+!.elasticbeanstalk/*.global.yml
+
